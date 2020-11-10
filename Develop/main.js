@@ -19,13 +19,6 @@ var fourPm = $("#4pm-text");
 fourPm = 4;
 var fivePm = $("#5pm-text");
 fivePm = 5;
-var sixPm = $("#6pm-text");
-sixPm = 6;
-var sevenPm = $("#7pm-text");
-sevenPm = 7;
-var eightPm = $("#8pm-text");
-eightPm = 8;
-
 
 if (localStorage.getItem("9")) {
     $("#9am-text").text(localStorage.getItem("9"));
@@ -53,14 +46,6 @@ if (localStorage.getItem("4")) {
 }
 if (localStorage.getItem("5")) {
     $("#5pm-text").text(localStorage.getItem("5"));
-}
-if (localStorage.getItem("6")) {
-    $("#6pm-text").text(localStorage.getItem("6"));
-}
-if (localStorage.getItem("7")) {
-    $("#7pm-text").text(localStorage.getItem("7"));
-} if (localStorage.getItem("8")) {
-    $("#8pm-text").text(localStorage.getItem("8"));
 }
 
 if (currentTime > nineAm) {
@@ -127,27 +112,6 @@ if (currentTime > fivePm) {
 } else if (currentTime < fivePm) {
     $("#5p-text").addClass("future");
 }
-if (currentTime > sixPm) {
-    $("#6pm-text").addClass("past");
-} else if (currentTime == sixPm) {
-    $("#6pm-text").addClass("present");
-} else if (currentTime < sixPm) {
-    $("#6pm-text").addClass("future");
-}
-if (currentTime > sevenPm) {
-    $("#7pm-text").addClass("past");
-} else if (currentTime == sevenPm) {
-    $("#7pm-text").addClass("present");
-} else if (currentTime < nineAm) {
-    $("#7pm-text").addClass("future");
-}
-if (currentTime > eightPm) {
-    $("#8pm-text").addClass("past");
-} else if (currentTime == eightPm) {
-    $("#8pm-text").addClass("present");
-} else if (currentTime < eightPm) {
-    $("#8pm-text").addClass("future");
-}
 
 $(".saveBtn").click(function (event) {
     console.log("you clicked saved");
@@ -208,4 +172,4 @@ $(".saveBtn").click(function (event) {
     var descriptionStored = $(this).siblings(".description").val();
     var fivePmStored = $(this).attr("data");
     localStorage.setItem(fivePmStored, descriptionStored);
-})
+});
